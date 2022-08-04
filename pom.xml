@@ -80,11 +80,13 @@
                     If you run out of memory, changes the value of the effort element
                     to 'low'.
                 -->
+                <xmlOutput>true</xmlOutput>
                 <effort>Max</effort>
                 <!-- Reports all bugs (other values are medium and max) -->
                 <threshold>Low</threshold>
                 <!-- Produces XML report -->
-                <xmlOutput>true</xmlOutput>
+              <xmlOutputDirectory>reports/findbugs</xmlOutputDirectory>
+              <xmlOutput>true</xmlOutput>
             </configuration>
         </plugin>
         
@@ -94,6 +96,8 @@
             <version>3.0.0</version>
             <configuration>
                 <configLocation>checkstyle.xml</configLocation>
+                <failOnError>false</failsOnError>
+              <outputFile>reports/checkstyle/checkstyle.xml</outputFile>
             </configuration>
         </plugin>
         
@@ -102,6 +106,11 @@
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.13.0</version> <!-- or use version from pluginManagement -->
         <configuration>
+          <linkXref>true</linkXref>
+          <targetjdk>1.8</targetjdk>
+          <format>xml</format>
+          <outputDirectory>reports/pmd/</outputDirectory>
+          <targetDirectory>reports/pmd/</targetDirectory> 
             <!-- failOnViolation is actually true by default, but can be disabled -->
             <failOnViolation>true</failOnViolation>
             <!-- printFailingErrors is pretty useful -->
