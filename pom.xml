@@ -83,10 +83,9 @@
                 <xmlOutput>true</xmlOutput>
                 <effort>Max</effort>
                 <!-- Reports all bugs (other values are medium and max) -->
-                <threshold>Low</threshold>
+            <threshold>Low</threshold>
                 <!-- Produces XML report -->
-              <xmlOutputDirectory>reports/findbugs</xmlOutputDirectory>
-              <xmlOutput>true</xmlOutput>
+            <xmlOutputDirectory>reports/findbugs</xmlOutputDirectory>
             </configuration>
         </plugin>
         
@@ -97,7 +96,7 @@
             <configuration>
                 <configLocation>checkstyle.xml</configLocation>
                 <failOnError>false</failsOnError>
-              <outputFile>reports/checkstyle/checkstyle.xml</outputFile>
+            <outputFile>reports/checkstyle/checkstyle.xml</outputFile>
             </configuration>
         </plugin>
         
@@ -106,15 +105,16 @@
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.13.0</version> <!-- or use version from pluginManagement -->
         <configuration>
-          <linkXref>true</linkXref>
-          <targetjdk>1.8</targetjdk>
-          <format>xml</format>
-          <outputDirectory>reports/pmd/</outputDirectory>
-          <targetDirectory>reports/pmd/</targetDirectory> 
+         <linkXref>true</linkXref>
+         <targetjdk>1.8</targetjdk>
+         <format>xml</format>
+           
             <!-- failOnViolation is actually true by default, but can be disabled -->
-            <failOnViolation>true</failOnViolation>
+         <failOnViolation>true</failOnViolation>
             <!-- printFailingErrors is pretty useful -->
-            <printFailingErrors>true</printFailingErrors>
+         <printFailingErrors>true</printFailingErrors>
+         <outputDirectory>reports/pmd/</outputDirectory>
+         <targetDirectory>reports/pmd/</targetDirectory>  
         </configuration>
         <executions>
           <execution>
