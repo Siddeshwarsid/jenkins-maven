@@ -23,6 +23,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'mvn test'
+        sh 'mvn pmd:pmd'
       }
       post {
         always {
