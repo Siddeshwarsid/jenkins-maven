@@ -32,18 +32,18 @@ pipeline {
       }
     }
     
-    stage('build') {
-      steps {
-        sh 'mvn clean package'
-      }
-    }
+//     stage('build') {
+//       steps {
+//         sh 'mvn clean package'
+//       }
+//     }
     
-    stage('Deploy to tomcat') {
-      steps {
-        sshagent(['tomcat']) {
-          sh 'scp -o StrictHostKeyChecking=no target/*.jar ubuntu@54.90.147.139:/prod/apache-tomcat-8.5.81/webapps/webappT.jar'
-        }
-      }
-    }
+//     stage('Deploy to tomcat') {
+//       steps {
+//         sshagent(['tomcat']) {
+//           sh 'scp -o StrictHostKeyChecking=no target/*.jar ubuntu@54.90.147.139:/prod/apache-tomcat-8.5.81/webapps/webappT.jar'
+//         }
+//       }
+//     }
   }
 }
